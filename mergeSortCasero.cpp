@@ -30,16 +30,14 @@ void mergeSort(int start, int end){
 
 int main(int argc, char const *argv[]){
     int n;
-    cin >> n;
-    srand(time(0));
-    for(int i = 0; i < n; i++){
-        A[i] = 1 + (rand() % 1000);
-    }
+    cin >> n; 
+    for(int i = 0; i < n; i++) cin >> A[i];
+    clock_t tStart = clock();
     mergeSort(0, n - 1);
     for(int i = 0; i<n;i++){
         cout << A[i] << " ";
     }
-
     cout << endl;
+    printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
     return 0;
 }
